@@ -52,10 +52,6 @@ coverage.xml
 .hypothesis/
 .pytest_cache/
 *.DS_Store
-/st_audiorec/
-/st_audiorec/*
-/st_audiorec/.
-/st_audiorec/__init__.py
 /notebooks/cache/
 /notebooks/cache/*
 /notebooks/cache/.

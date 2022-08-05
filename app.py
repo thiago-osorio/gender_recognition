@@ -92,7 +92,7 @@ if isinstance(val, dict):
         sorted_ints = val[ind]
         stream = BytesIO(b"".join([int(v).to_bytes(1, "big") for v in sorted_ints]))
         wav_bytes = stream.read()
-        with open('temp/audio.wav', 'wb') as f:
+        with open('temp//audio.wav', 'wb') as f:
             f.write(wav_bytes)
             f.close()
         properties = specprop('temp/audio.wav')
