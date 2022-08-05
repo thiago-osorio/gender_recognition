@@ -1,0 +1,5 @@
+numpy==1.20.3
+pandas==1.4.3
+pyAudioAnalysis==0.3.14
+git+https://github.com/tyiannak/pyAudioAnalysis@master#egg=pyAudioAnalysis
+streamlit==1.10.0
