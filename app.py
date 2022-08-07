@@ -84,26 +84,29 @@ st.title('Gender Recognition')
 
 val = st_audiorec()
 
-if isinstance(val, dict):
-    with st.spinner('Processing audio-recording...'):
-        ind, val = zip(*val['arr'].items())
-        ind = np.array(ind, dtype=int)
-        val = np.array(val)
-        sorted_ints = val[ind]
-        stream = BytesIO(b"".join([int(v).to_bytes(1, "big") for v in sorted_ints]))
-        wav_bytes = stream.read()
-        with open('temp//audio.wav', 'wb') as f:
-            f.write(wav_bytes)
-            f.close()
-        properties = specprop('temp/audio.wav')
-        modelo = pickle.load(open('modelos/pipeline.pkl', 'rb'))
-        pred = predicao(modelo, properties)
-        if pred == 'Male' or pred == 'Female':
-            if pred == 'Male':
-                st.success(pred)
-                st.image('https://cdn-icons-png.flaticon.com/512/44/44483.png', width=60)
+try:
+    if isinstance(val, dict):
+        with st.spinner('Processing audio-recording...'):
+            ind, val = zip(*val['arr'].items())
+            ind = np.array(ind, dtype=int)
+            val = np.array(val)
+            sorted_ints = val[ind]
+            stream = BytesIO(b"".join([int(v).to_bytes(1, "big") for v in sorted_ints]))
+            wav_bytes = stream.read()
+            with open('temp//audio.wav', 'wb') as f:
+                f.write(wav_bytes)
+                f.close()
+            properties = specprop('temp/audio.wav')
+            modelo = pickle.load(open('modelos/pipeline.pkl', 'rb'))
+            pred = predicao(modelo, properties)
+            if pred == 'Male' or pred == 'Female':
+                if pred == 'Male':
+                    st.success(pred)
+                    st.image('https://cdn-icons-png.flaticon.com/512/44/44483.png', width=60)
+                else:
+                    st.success(pred)
+                    st.image('https://www.iconpacks.net/icons/2/free-female-symbol-icon-2240-thumb.png', width=60)
             else:
-                st.success(pred)
-                st.image('https://www.iconpacks.net/icons/2/free-female-symbol-icon-2240-thumb.png', width=60)
-        else:
-            st.error(pred)
+                st.error(pred)
+except:
+    st.error('Please, record an audio sample to predict the gender!')
