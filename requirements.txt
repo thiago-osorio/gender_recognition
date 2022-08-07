@@ -1,5 +1,5 @@
-numpy
-pandas
 streamlit
 ffmpeg
 git+https://github.com/tyiannak/pyAudioAnalysis@master#egg=pyAudioAnalysis
+numpy
+pandas
