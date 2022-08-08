@@ -6,7 +6,7 @@
 
 ---
 ## 🆘 Description
-In this project I user LightGBM Classifier to predict a person's gender by voice. After that, I created a Web UI to record the voice and generate the prediction (the streamlit custom component was created by Stefan Rummer and is available [`here`](https://github.com/stefanrmmr/streamlit_audio_recorder)).
+In this project I used LightGBM Classifier to predict a person's gender by voice. After that, I created a Web UI to record the voice and generate the prediction (the streamlit custom component was created by Stefan Rummer and is available [`here`](https://github.com/stefanrmmr/streamlit_audio_recorder)).
 
 ## 💻 Technologies Used
 - Python
