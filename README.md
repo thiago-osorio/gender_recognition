@@ -25,3 +25,6 @@ In this project I used LightGBM Classifier to predict a person's gender by voice
 - The complete project is available [`here`](https://github.com/thiago-osorio/gender_recognition/blob/master/notebooks/gender.ipynb)
 - The web app is available [`here`](https://thiago-osorio-gender-recognition-app-vvf0hi.streamlitapp.com/)
 - Streamlit Audio Recorder is available [`here`](https://github.com/stefanrmmr/streamlit_audio_recorder)
+
+## 📖 License
+[`MIT`](https://github.com/thiago-osorio/gender_recognition/blob/master/LICENSE)
